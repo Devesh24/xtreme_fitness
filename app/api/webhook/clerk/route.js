@@ -1,6 +1,6 @@
 import { Webhook } from 'svix'
 import { createUser, deleteUser, updateUser } from "@/lib/actions/user.actions";
-import { clerkClient } from '@clerk/nextjs/dist/types/server';
+import { clerkClient } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 
