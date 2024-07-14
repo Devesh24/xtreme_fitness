@@ -1,4 +1,3 @@
-import React from 'react'
 import { Separator } from '../ui/separator'
 import Image from 'next/image'
 import Link from 'next/link'
