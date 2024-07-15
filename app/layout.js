@@ -1,6 +1,7 @@
 import { Poppins, Arvo } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/toaster"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,7 +27,10 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={arvo.variable}>{children}</body>
+        <body className={arvo.variable}>
+          <main>{children}</main>
+          <Toaster />
+        </body>
       </html>
     </ClerkProvider>
   );

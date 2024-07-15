@@ -12,12 +12,19 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
-import Link from "next/link";
+import {createMessage} from "@/lib/actions/message.actions";
 import Image from "next/image";
+import { handleError } from "@/lib/utils";
+import { useToast } from "../ui/use-toast";
+import { useState } from "react";
 
 const ContactForm = ({message}) => {
-    const formSchema = z.object({
-        username: z.string().min(2).max(50),
+      const formSchema = z.object({
+        name: z.string().min(3, 'Name must be atleast 3 characters.').max(50, 'Name must be atmost 50 characters.'),
+        phone: z.string().length(10, 'Phone is invalid.'),
+        email: z.string().min(1, 'This field is mandatory.').email('Enter valid Email.'),
+        subject: z.string().min(5, 'Subject must be atleast 5 characters.').max(50, 'Name must be atmost 50 characters.'),
+        message: z.string().min(5, 'Message must be atleast 5 characters.').max(150, 'Name must be atmost 150 characters.')
       });
     
       const initialValues = {
@@ -34,16 +41,35 @@ const ContactForm = ({message}) => {
       });
     
       // 2. Define a submit handler.
-      function onSubmit(values) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values);
+      const { toast } = useToast()
+      async function onSubmit(message) {
+        try {
+          const newMessage = await createMessage(message)
+
+          if(newMessage){
+            toast({
+              description: "Message Sent Successfully",
+              className: "bg-gradient-to-b from-[#dd4b4b] to-[#ff6947] tracking-wider text-white border-0"
+            })
+            form.reset()
+          }
+          else{
+            toast({
+              description: "Message not Sent",
+              className: "bg-gradient-to-b from-[#dd4b4b] to-[#ff6947] tracking-wider text-white border-0"
+            })
+          }
+        } catch (error) {
+          handleError(error)
+        }
       }
+
+
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-5"
+        className="flex flex-col gap-5 text-black"
       >
         <div className="flex flex-col gap-5 md:flex-row">
           <FormField
@@ -129,11 +155,11 @@ const ContactForm = ({message}) => {
             </FormItem>
           )}
         />
-        <Link
-          href={"/"}
+        <button type="submit"
           className="py-3 ps-7 pe-3 border-2 border-red-500 flex-center w-fit rounded-full text-lg mt-2 gap-4 hover:bg-red-500 hover:text-white transition-colors duration-500 bg-transparent"
+          disabled={form.formState.isSubmitting}
         >
-          {message}
+            {form.formState.isSubmitting ? 'Submitting...' : message}
           <span className="py-3 px-4 rounded-full bg-red-600">
             <Image
               src={"/assets/icons/right-arrow.svg"}
@@ -142,7 +168,7 @@ const ContactForm = ({message}) => {
               alt="rightArrow"
             />
           </span>
-        </Link>
+        </button>
       </form>
     </Form>
   );
