@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const ExerciseCard = ({exercise}) => {
+const ExerciseCard = ({exercise, page}) => {
   return (
-    <div className="w-[80%] md:w-[45%] lg:w-[30%] h-[63vh] group bg-white shadow-lg transition-all duration-500">
+    <div className={`w-[80%] md:w-[45%] ${page==="Related" ? 'lg:w-[80%]' : 'lg:w-[30%]'} h-[63vh] group bg-white shadow-lg transition-all duration-500`}>
         <div className='w-full h-[45%] overflow-hidden'>
             <div className="w-full h-full bg-cover group-hover:scale-105 transition-transform duration-300" style={{backgroundImage: `url('${exercise.imageUrl}')`}}></div>
         </div>
@@ -17,8 +17,8 @@ const ExerciseCard = ({exercise}) => {
                 </div>
                 <div className='text-gray-700 text-[17px] flex-center flex-wrap'>
                     <p>Secondary Targets: </p>
-                    {exercise.secondaryTargets.map((target) => (
-                        <p className='text-red-500 ms-2'>{target}, </p>
+                    {exercise.secondaryTargets.map((target, ind) => (
+                        <p className='text-red-500 ms-2'>{target} {ind !== exercise.secondaryTargets.length-1 && ','} </p>
                     ))}
                 </div>
             </div>

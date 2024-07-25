@@ -16,3 +16,5 @@
 
 shop - protiens, equipments
 gym locator - gyms near me
+
+pagination
