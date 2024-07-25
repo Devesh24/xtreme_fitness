@@ -7,7 +7,7 @@ const ContactPage = () => {
         <div className='relative top-0 w-full h-[50vh] md:h-[70vh] bg-cover md:bg-center text-white flex-center h1-bold' style={{backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/contact.jpg')"}}>
             CONTACT
         </div>
-        <div className="w-full py-10 lg:py-16 bg-[#fff8f8]">
+        <div className="w-full py-10 lg:py-16 bg-[#fff8f8] bg-no-repeat" style={{backgroundImage: "url('/assets/images/design-elelment-1.png')"}}>
             <div className="wrapper">
                 <h2 className='text-[18px] md:text-[20px] text-red-500 tracking-[0.3em] text-center'>FIND US NOW</h2>
                 <h1 className='h2-bold text-center'>READY FOR WORKOUT</h1>

@@ -13,13 +13,13 @@ const Footer = () => {
                 <p className='text-center'>Fitness made easy, goals made achievable.</p>
                 <div className='flex gap-3'>
                     <Link href={"/"} className='rounded-full bg-gray-300 bg-opacity-15 p-4 hover:bg-red-500'>
-                        <Image src={"assets/icons/instagram.svg"} alt='instagram' height={15} width={15} />
+                        <Image src={"/assets/icons/instagram.svg"} alt='instagram' height={15} width={15} />
                     </Link>
                     <Link href={"/"} className='rounded-full bg-gray-300 bg-opacity-15 p-4 hover:bg-red-500'>
-                        <Image src={"assets/icons/facebook.svg"} alt='facebook' height={15} width={15} />
+                        <Image src={"/assets/icons/facebook.svg"} alt='facebook' height={15} width={15} />
                     </Link>
                     <Link href={"/"} className='rounded-full bg-gray-300 bg-opacity-15 p-4 hover:bg-red-500'>
-                        <Image src={"assets/icons/twitter.svg"} alt='X' height={15} width={15} />
+                        <Image src={"/assets/icons/twitter.svg"} alt='X' height={15} width={15} />
                     </Link>
                 </div>
             </div>

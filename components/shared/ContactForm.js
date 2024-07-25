@@ -16,7 +16,6 @@ import {createMessage} from "@/lib/actions/message.actions";
 import Image from "next/image";
 import { handleError } from "@/lib/utils";
 import { useToast } from "../ui/use-toast";
-import { useState } from "react";
 
 const ContactForm = ({message}) => {
       const formSchema = z.object({
