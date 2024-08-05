@@ -11,6 +11,7 @@ const HomeContact = () => {
           <img
             src={"/assets/images/home_contact.jpg"}
             className="w-full h-full object-cover"
+            alt="Contact Us"
           />
         </div>
         <div className="w-[90%] lg:w-[45%] flex flex-col gap-2">

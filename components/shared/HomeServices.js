@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const HomeServices = () => {
   return (
@@ -44,7 +43,7 @@ const HomeServices = () => {
                             <h4 className='font-bold text-2xl'>DIET & NUTRITION TRACKER</h4>
                             <p className='text-lg text-gray-700 tracking-wider group-hover:text-gray-100 transition-colors duration-300'>Log your daily meals and see nutritional info to manage your dietary goals. Stay on track, whether you're looking to maintain, lose, or gain weight.</p>
                             <Link href={"/diet-tracker"} className='py-2 ps-6 pe-2 border-[1px] border-black flex-center w-fit rounded-full mt-2 gap-4 group-hover:bg-black'>
-                                Read More
+                                Explore Feature
                                 <span className='py-2 px-3 rounded-full bg-red-600'>
                                     <Image src={"/assets/icons/right-arrow.svg"} width={10} height={10} alt='rightArrow' />
                                 </span>
@@ -62,7 +61,7 @@ const HomeServices = () => {
                             <h4 className='font-bold text-2xl'>WORKOUT TRACKER</h4>
                             <p className='text-lg text-gray-700 tracking-wider group-hover:text-gray-100 transition-colors duration-300'>Access a library of workouts sorted by muscle group, complete with videos and form guides. Track your progress and create personalized workout plans.</p>
                             <Link href={"/workout-tracker"} className='py-2 ps-6 pe-2 border-[1px] border-black flex-center w-fit rounded-full mt-2 gap-4 group-hover:bg-black'>
-                                Read More
+                                Explore Feature
                                 <span className='py-2 px-3 rounded-full bg-red-600'>
                                     <Image src={"/assets/icons/right-arrow.svg"} width={10} height={10} alt='rightArrow' />
                                 </span>
@@ -80,7 +79,7 @@ const HomeServices = () => {
                             <h4 className='font-bold text-2xl'>PERSONAL TRAINING</h4>
                             <p className='text-lg text-gray-700 tracking-wider group-hover:text-gray-100 transition-colors duration-300'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, cumque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, aliquam.</p>
                             <Link href={"/"} className='py-2 ps-6 pe-2 border-[1px] border-black flex-center w-fit rounded-full mt-2 gap-4 group-hover:bg-black'>
-                                Read More
+                                Explore Feature
                                 <span className='py-2 px-3 rounded-full bg-red-600'>
                                     <Image src={"/assets/icons/right-arrow.svg"} width={10} height={10} alt='rightArrow' />
                                 </span>
@@ -98,7 +97,7 @@ const HomeServices = () => {
                             <h4 className='font-bold text-2xl'>GROUP CLASSES</h4>
                             <p className='text-lg text-gray-700 tracking-wider group-hover:text-gray-100 transition-colors duration-300'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, cumque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, aliquam.</p>
                             <Link href={"/"} className='py-2 ps-6 pe-2 border-[1px] border-black flex-center w-fit rounded-full mt-2 gap-4 group-hover:bg-black'>
-                                Read More
+                                Explore Feature
                                 <span className='py-2 px-3 rounded-full bg-red-600'>
                                     <Image src={"/assets/icons/right-arrow.svg"} width={10} height={10} alt='rightArrow' />
                                 </span>

@@ -18,3 +18,6 @@ shop - protiens, equipments
 gym locator - gyms near me
 
 pagination
+user exercise data
+
+ai integration to know something health related

@@ -47,26 +47,25 @@ const ExercisePage = ({ params: { id } }) => {
       >
         <p className="h1-bolder mt-12">{exercise?.target}</p>
       </div>
-      <div className="w-full py-16">
-        <div className="wrapper w-full flex flex-wrap justify-between gap-10">
-          <div className="w-full lg:w-[55%] xl:w-[50%] flex-center flex-col gap-4 lg:gap-7">
-            <p className="h2-bold uppercase text-center mb-4">{exercise.name}</p>
+      <div className="w-full py-16 relative">
+        <div className="wrapper w-full flex flex-wrap justify-between gap-10 lg:gap-20">
+          <div className="w-full lg:w-[55%] xl:w-[50%] flex-center flex-col gap-4 lg:gap-7 z-10">
+            <p className="h2-bold uppercase text-center text-white mb-4">{exercise.name}</p>
             <iframe
-              className="w-full aspect-video mb-2"
+              className="w-full aspect-video mb-2 border-[20px] border-white"
               src={`https://www.youtube.com/embed/${exercise.videoUrl}`}
               title={exercise.name}
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             />
             <div className="w-full flex gap-5">
-                <p className="p-bold-20 underline min-w-[40%] lg:w-[30%]">Target Muscle: </p>
+                <p className="p-bold-20 underline min-w-[40%] lg:min-w-[30%] lg:max-w-[30%]">Target Muscle: </p>
                 <div className="flex-center flex-col gap-2">
                     <Image src={targetMuscleData.imageUrl} width={200} height={200} />
                     <p className="text-[17px] font-bold uppercase text-blue-600">{targetMuscleData.muscle}</p>
                 </div>
             </div>
             <div className="w-full flex gap-5">
-                <p className="p-bold-20 underline min-w-[40%] lg:w-[30%]">Secondary Target Muscles: </p>
+                <p className="p-bold-20 underline min-w-[40%] lg:min-w-[30%] lg:max-w-[30%]">Secondary Target Muscles: </p>
                 <div className={`flex flex-wrap gap-4 ${secondaryMuscleData.length == 0 && 'items-center'}`}>
                     {
                         secondaryMuscleData.length == 0 ? 
@@ -100,15 +99,18 @@ const ExercisePage = ({ params: { id } }) => {
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-[40%] flex flex-col items-center py-8">
-            <h1 className="h4-bold text-center text-red-500 mb-4 underline">Related Exercises</h1>
-            <div className="flex-center flex-wrap gap-10 mt-8 w-full">
+          <div className="w-full lg:w-[40%] flex flex-col items-center pt-8 pb-16 h-fit border border-black rounded-lg z-10">
+            <h1 className="h4-bold text-center text-white mb-4 underline">Related Exercises</h1>
+            <div className="flex-center flex-wrap gap-16 mt-8 w-full">
               {relatedExercises?.map((related) => (
-                <ExerciseCard key={related._id} exercise={related} page="Related" />
+                <>
+                  <ExerciseCard key={related._id} exercise={related} page="Related" />
+                </>
               ))}
             </div>
           </div>
         </div>
+        <div className="absolute top-0 bg-gradient-to-b from-[#dd4b4b] to-[#ff6947] h-[60vh] w-full"></div>
       </div>
     </div>
   );
