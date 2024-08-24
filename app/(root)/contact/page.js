@@ -4,7 +4,7 @@ import Image from "next/image"
 const ContactPage = () => {
   return (
     <>
-        <div className='relative top-0 w-full h-[50vh] md:h-[70vh] bg-cover md:bg-center text-white flex-center h1-bold' style={{backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/contact.jpg')"}}>
+        <div className='relative top-0 w-full h-[50vh] md:h-[80vh] bg-cover md:bg-center text-white flex-center h1-bold' style={{backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/assets/images/contact.jpg')"}}>
             CONTACT
         </div>
         <div className="w-full py-10 lg:py-16 bg-[#fff8f8] bg-no-repeat" style={{backgroundImage: "url('/assets/images/design-elelment-1.png')"}}>

@@ -4,6 +4,7 @@ import { clerkClient } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 
+// ROUTE HANDLER
 export async function POST(req) {
 
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
